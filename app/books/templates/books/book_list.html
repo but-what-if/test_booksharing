@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Author Name</th>
+            <th>Title</th>
+            <th>Publish Year</th>
+            <th>Review</th>
+            <th>Condition</th>
+        </tr>
+
+        {% for object in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ object.id }}</td>
+                <td>{{ object.author }}</td>
+                <td>{{ object.title }}</td>
+                <td>{{ object.publish_year }}</td>
+                <td>{{ object.review }}</td>
+                <td>{{ object.condition }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
